@@ -1,0 +1,16 @@
+function createFunctions(arrayLength) {
+    let arrayOfFunctions = [];
+    for(let i =0; i<arrayLength; i++ ) {
+        const arrayElement = function () {
+            return i;
+        }
+        arrayOfFunctions.push(arrayElement);
+    }
+    return arrayOfFunctions;
+}
+
+var callbacks = createFunctions(5); // create an array, containing 5 functions
+
+console.log(callbacks[0]()); // must return 0
+console.log(callbacks[3]()); // must return 3
+
