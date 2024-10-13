@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <p id="result"></p>
+    <button id="start">Start</button>
+    <button id="decrease">Decrement</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let count = 0;
+        let timer;
+        function increment () {
+            count++;
+            document.querySelector("#result").innerHTML = count;
+        }
+        function decrement() {
+            count--;
+            document.querySelector("#result").innerHTML = count;
+        }
+        function resetToZero() {
+            clearInterval(timer);
+            count = 0;
+            document.querySelector("#result").innerHTML = count;
+        }
+        
+        let start = document.querySelector("#start");
+        start.addEventListener('click', function() {
+            clearInterval(timer);
+            timer =  setInterval(increment, 1000);
+        });
+
+        let decrease = document.querySelector("#decrease");
+        decrease.addEventListener('click', function() {
+            clearInterval(timer);
+            timer =  setInterval(decrement, 1000);
+        });
+
+        let reset = document.querySelector("#reset");
+        reset.addEventListener('click', function() {
+            resetToZero();
+        });
+
+      </script>
+</html>
+
+
