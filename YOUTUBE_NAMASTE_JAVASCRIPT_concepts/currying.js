@@ -9,8 +9,8 @@ multiplyByThree = multiply.bind(this, 3);
 multiplyByThree(3);
 
 // with CLOSURE
-let multiplyWithClosure = function(x) {
-   return function(y) {
+let multiplyWithClosure = (x) => {
+   return (y) => {
     console.log(x*y);
    }
 }

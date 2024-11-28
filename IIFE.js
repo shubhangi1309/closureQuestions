@@ -21,9 +21,6 @@
 //         setTimeout(() => console.log(j), j * 1000);
 //     })(i);
 // }
-// 0
-// 1
-// 2
 // ------Q4--------
 // let x = 5;
 
@@ -59,7 +56,7 @@
 // let obj = {
 //     a: 1,
 //     b: (function () {
-//         console.log("62=",this.a); // undefined
+//         console.log("62=",this.a); 
 //         return function () {
 //             console.log("64=",this.a); 
 //         };
@@ -67,29 +64,38 @@
 // };
 
 // let fn = obj.b;
-// fn.call({ a: 10 }); // 10
-// fn(); // undefined
+// fn.call({ a: 10 }); 
+// fn();
 // ------Q 8 --------
 // (function () {
 //     var count = 0;
 //     (function () {
 //         count++;
-//         console.log(count); // 1
+//         console.log(count);
 //     })();
-//     console.log(count); // 1
+//     console.log(count); 
 // })();
 // ------Q 9-----important---
-(() => {
-    let a = 1;
-    (() => {
-        console.log(a); // 1
-        a = 2;
-        console.log(a); // 2
-    })();
-    console.log(a); // 2
-})();
+// (() => {
+//     let a = 1;
+//     (() => {
+//         console.log(a); 
+//         a = 2;
+//         console.log(a); 
+//     })();
+//     console.log(a); 
+// })();
 
-/
+// (function (){
+//     let a = 1;
+//     (function() {
+//         console.log(a); 
+//         let a = 2;
+//         console.log(a); 
+//     })();
+//     console.log("what=",a); 
+// })();
+
 // ------Q 10---important-----
 // const person = {
 //     name: 'Alice',

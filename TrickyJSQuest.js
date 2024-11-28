@@ -27,7 +27,7 @@
 // }
 // test();
 // -------Q3----------------
-// const name ="Lucy"
+// let name ="Lucy"
 // const person = {
 //     name: 'Alice',
 //     greet: function () {
@@ -71,35 +71,35 @@
 // lion.makeSound(); // ?
 // -------Q6---imp----
 
-function outer(callback) {
-    let x = 10;
-    callback();
-}
+// function outer(callback) {
+//     let x = 10;
+//     callback();
+// }
 
-let x = 20;
-outer(function () {console.log(x);}); 
+// let x = 20;
+// outer(function () {console.log(x);}); 
 
 // -------Q7------
-function series(n) {
-    let count = 0;
-    return () => {
-        count++;
-        console.log(count*n);
-    }
-}
+// function series(n) {
+//     let count = 0;
+//     return () => {
+//         count++;
+//         console.log(count*n);
+//     }
+// }
 
-const series2 = series(2);
-const series5 = series(5);
+// const series2 = series(2); //2
+// const series5 = series(5); //5
 
-series2();
-series2();
-series2();
-series2();
+// series2(); 
+// series2();  
+// series2(); 
+// series2(); 
 
-series5();
-series5();
-series5();
-series5();
+// series5();
+// series5(); 
+// series5();
+// series5();
 
 // --------Q8------
 // function createMultiplier(multiplier) {
@@ -107,11 +107,11 @@ series5();
 //         return number * multiplier;
 //     };
 // }
-// const double = createMultiplier(2);
-// const triple = createMultiplier(3);
-// console.log(double(5)); // ? 10
-// console.log(triple(4)); // ? 12
-// console.log(createMultiplier(10)(3)); // ? 30
+// const double = createMultiplier(2); // 2
+// const triple = createMultiplier(3); //3
+// console.log(double(5)); //10
+// console.log(triple(4));  //12
+// console.log(createMultiplier(10)(3));  //30
 // --------Q9------
 // function first() {
 //     console.log('First');
@@ -148,7 +148,7 @@ series5();
 
 // obj.calculate(show); // ?
 // obj.calculate(showDouble); // ?
-// --------Q 11------
+// --------Q 11---imp---
 // let counter = 10;
 // function modifyCounter(operation) {
 //     return function () {
@@ -159,10 +159,10 @@ series5();
 
 // const increment = modifyCounter((x) => x + 1);
 // const decrement = modifyCounter((x) => x - 2);
-// increment(); // ?
-// decrement(); // ?
-// increment(); // ?
-// --------Q 12------
+// increment(); // 
+// decrement(); // 
+// increment(); // 
+// --------Q 12---WHY?????---
 // function createArray() {
 //     const result = [];
 //     for (var i = 0; i < 3; i++) {
@@ -215,9 +215,9 @@ series5();
 // }
 
 // const logArray = createLoggers();
-// logArray[0](); // ?0
-// logArray[1](); // ?1
-// logArray[2](); // ?2
+// logArray[0](); // ?
+// logArray[1](); // ?
+// logArray[2](); // ?
 // --------Q 16------
 // function delayedLogs() {
 //     for (var i = 0; i < 3; i++) {
@@ -259,9 +259,9 @@ series5();
 // const addFive = adder(5);
 // const addTen = adder(10);
 
-// console.log(addFive(2)); // ? 7
-// console.log(addTen(3)); // ? 13
-// console.log(adder(20)(5)); // ? 25
+// console.log(addFive(2)); // 
+// console.log(addTen(3)); // 
+// console.log(adder(20)(5)); // 
 // --------Q 20------
 // let value = 1;
 
@@ -272,10 +272,19 @@ series5();
 //     })();
 // })();
 // --------Q 21------
-for (let i = 0; i < 3; i++) {
-    document.body.addEventListener('click', function () {
-        console.log(i);
-    });
-}
+// for (let i = 0; i < 3; i++) {
+//     document.body.addEventListener('click', function () {
+//         console.log(i);
+//     });
+// }
 
 
+const obj = {
+    name: 'John',
+    greet: function() {
+    setTimeout(function() {
+    console.log("====",this.name);
+    }, 0);
+    }
+   };
+   obj.greet();

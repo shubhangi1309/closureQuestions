@@ -4,4 +4,4 @@ let sum = function(a) {
     }
 }
 
-console.log(sum(1)(1)(2)(3)());
+console.log(sum(1)(27)(2)(3)());
